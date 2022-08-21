@@ -2,19 +2,17 @@
   "kind": "collectionType",
   "collectionName": "projects",
   "info": {
-    "name": "project"
+    "name": "project",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
-    },
-    "description": {
-      "type": "text",
       "required": true
     },
     "image": {
@@ -26,15 +24,16 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "github": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "url": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "featured": {
       "type": "boolean",
@@ -45,6 +44,167 @@
       "type": "component",
       "repeatable": true,
       "component": "description.stack-item",
+      "required": true
+    },
+    "image1": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "image2": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "image3": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "image4": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "image5": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "title"
+    },
+    "propertyDetails": {
+      "type": "component",
+      "repeatable": false,
+      "component": "project-info.property-details",
+      "required": true
+    },
+    "unitMix": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project-info.unit-mix"
+    },
+    "floorPlan": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "locationMap": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "fullBrochure": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "projectVideo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "title1": {
+      "type": "string"
+    },
+    "subtitle1": {
+      "type": "string"
+    },
+    "title2": {
+      "type": "string"
+    },
+    "subtitle2": {
+      "type": "string"
+    },
+    "title3": {
+      "type": "string"
+    },
+    "subtitle3": {
+      "type": "string"
+    },
+    "title4": {
+      "type": "string"
+    },
+    "subtitle4": {
+      "type": "string"
+    },
+    "title5": {
+      "type": "string"
+    },
+    "subtitle5": {
+      "type": "string"
+    },
+    "overview": {
+      "type": "richtext",
       "required": true
     }
   }
